@@ -1,25 +1,44 @@
 'use client';
 
-type GoogleMapProps = {
+import { useEffect } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+type LeafletMapProps = {
   lat: number;
   lng: number;
+  zoom?: number;          // optional; default 14
+  showMarker?: boolean;   // optional; default true
 };
 
-export default function GoogleMap({ lat, lng }: GoogleMapProps) {
-  const mapUrl = `https://www.google.com/maps?q=${lat},${lng}&hl=es;z=14&output=embed`;
+export default function LeafletMap({
+  lat,
+  lng,
+  zoom = 14,
+  showMarker = true,
+}: LeafletMapProps) {
+  useEffect(() => {
+    // Create map
+    const map = L.map('leaflet-map').setView([lat, lng], zoom);
 
-  return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <iframe
-        title="Google Map"
-        width="100%"
-        height="100%"
-        frameBorder="0"
-        scrolling="no"
-        marginHeight={0}
-        marginWidth={0}
-        src={mapUrl}
-      ></iframe>
-    </div>
-  );
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Marker (optional)
+    let marker: L.Marker | undefined;
+    if (showMarker) {
+      marker = L.marker([lat, lng]).addTo(map);
+    }
+
+    // Clean up on unmount
+    return () => {
+      map.remove();
+      marker?.remove();
+    };
+  }, [lat, lng, zoom, showMarker]);
+
+  return <div id="leaflet-map" className="w-full h-full" />;
 }
