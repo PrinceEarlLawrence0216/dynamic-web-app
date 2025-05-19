@@ -54,7 +54,7 @@ export default function LoginPage() {
         localStorage.setItem('user', JSON.stringify({ ...user, isAdmin: false }));
         router.push('/myposts');
       } else {
-        setError('Invalid credentials. Use your email as username and your username as password.');
+        setError('Oops! That username or password doesn't match. Give it another shot.');
       }
     } catch {
       setError('Login failed. Please try again later.');
