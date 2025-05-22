@@ -117,10 +117,10 @@ https://dynamic-web-app-psi.vercel.app
 
 | Member | Task Assignment                      |
 | ------ | ------------------------------------ |
-| Merryjean Maravilla  | Setup, user session logic            |
-| Alexis Jaso  | Fetch API Integration & Documentation               |
-| Earl Lawrence Fulgar  | UI design with Tailwind              |
-| Mary Joy Dulay  | Post/comment rendering and filtering |
+| Merryjean Maravilla  | UI design, Assisted in Log in system            |
+| Alexis Jaso  | UI design with Tailwind, Implemented Post and Comment, Documentation         |
+| Earl Lawrence Fulgar  | Set up, fetch api, Implemented User listing, Group Presentor      |
+| Mary Joy Dulay  | UI design, Assisted in Registration in system |
 
 ---
 
