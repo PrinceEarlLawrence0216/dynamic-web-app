@@ -108,7 +108,7 @@ vercel
 URL after deployment:
 
 ```
-https://mypostpage.vercel.app
+https://dynamic-web-app-psi.vercel.app
 ```
 
 ---
@@ -117,10 +117,10 @@ https://mypostpage.vercel.app
 
 | Member | Task Assignment                      |
 | ------ | ------------------------------------ |
-| Dev 1  | Setup, user session logic            |
-| Dev 2  | Fetch API integration                |
-| Dev 3  | UI design with Tailwind              |
-| Dev 4  | Post/comment rendering and filtering |
+| Merryjean Maravilla  | Setup, user session logic            |
+| Alexis Jaso  | Fetch API Integration & Documentation               |
+| Earl Lawrence Fulgar  | UI design with Tailwind              |
+| Mary Joy Dulay  | Post/comment rendering and filtering |
 
 ---
 
